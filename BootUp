@@ -1,0 +1,30 @@
+public class BootUp {
+	
+	private String name;
+	private String playerClass;
+	
+	public BootUp(String name){
+		this.name = name;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setPlayerClass(String playerClass){
+		this.playerClass = playerClass;
+	}
+	
+	public String getPlayerClass(){
+		return playerClass;
+	}
+	
+	public String classRoster(){
+		return "\n~Classes~\n-Paladin\n-Warrior\n-Rouge\n-Wizard";
+	}
+	
+	public String toString(){
+		return "\nWelcome, " + name + " the " + playerClass + ", to Valhalla.";
+	}
+
+}
