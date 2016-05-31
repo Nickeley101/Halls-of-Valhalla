@@ -1,30 +1,33 @@
-public class BootUp {
-	
-	private String name;
-	private String playerClass;
-	
-	public BootUp(String name){
-		this.name = name;
-	}
-	
-	public String getName(){
-		return name;
-	}
-	
-	public void setPlayerClass(String playerClass){
-		this.playerClass = playerClass;
-	}
-	
-	public String getPlayerClass(){
-		return playerClass;
-	}
-	
-	public String classRoster(){
-		return "\n~Classes~\n-Paladin\n-Warrior\n-Rouge\n-Wizard";
-	}
-	
-	public String toString(){
-		return "\nWelcome, " + name + " the " + playerClass + ", to Valhalla.";
+import java.util.Scanner;
+public class Driver {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("-------------------<<Halls of Valhalla>>-------------------");
+		
+		System.out.print("\nYour Name: ");
+		String name = scan.nextLine();//User name
+		
+		BootUp Player = new BootUp(name);//Player BootUp Sequence and User info storage
+		
+		System.out.println(Player.classRoster());
+		
+		System.out.print("\nChoose a Class: ");
+		String playerClass = "";//User class
+		
+		int i = 0;
+		while(i == 0){
+			playerClass = scan.nextLine();
+			if(playerClass.equals("Paladin") || playerClass.equals("Warrior") || playerClass.equals("Rouge") || playerClass.equals("Wizard")){
+				Player.setPlayerClass(playerClass);
+				i++;
+			}else{
+				System.out.println("\nInvalid Class.");
+				System.out.print("Choose a Class: ");
+			}
+		}
+		System.out.println(Player.toString());
+
 	}
 
 }
