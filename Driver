@@ -6,14 +6,14 @@ public class Driver {
 		System.out.println("-------------------<<Halls of Valhalla>>-------------------");
 		
 		System.out.print("\nYour Name: ");
-		String name = scan.nextLine();
+		String name = scan.nextLine();//User name
 		
-		BootUp Player = new BootUp(name);//Player BootUp Sequence
+		BootUp Player = new BootUp(name);//Player BootUp Sequence and User info storage
 		
 		System.out.println(Player.classRoster());
 		
 		System.out.print("\nChoose a Class: ");
-		String playerClass = "";
+		String playerClass = "";//User class
 		
 		int i = 0;
 		while(i == 0){
